@@ -20,7 +20,7 @@ export default function EditorPage() {
           <p className="mt-2 text-sm text-slate-600">Document ID: {docId}</p>
         </div>
 
-        <SpreadsheetGrid />
+        <SpreadsheetGrid docId={docId} />
       </main>
     </div>
   );
