@@ -3,10 +3,13 @@
 import { useParams } from "next/navigation";
 import Navbar from "@/components/ui/Navbar";
 import SpreadsheetGrid from "@/components/editor/SpreadsheetGrid";
+import PresenceBar from "@/components/editor/PresenceBar";
+import { usePresence } from "@/hooks/usePresence";
 
 export default function EditorPage() {
   const params = useParams();
   const docId = params.id as string;
+  const { users } = usePresence(docId);
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -19,6 +22,8 @@ export default function EditorPage() {
           </h1>
           <p className="mt-2 text-sm text-slate-600">Document ID: {docId}</p>
         </div>
+
+        <PresenceBar users={users} />
 
         <SpreadsheetGrid docId={docId} />
       </main>

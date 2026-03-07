@@ -23,6 +23,7 @@ export interface PresenceUser {
   displayName: string;
   photoURL: string;
   activeCell: string;
+  color: string;
   lastSeen: Timestamp;
 }
 
